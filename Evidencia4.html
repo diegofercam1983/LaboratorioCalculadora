@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesLaboratorios.css">
+    <script src="changePage.js"></script>
+    <title>Evidencia - Calculadora de Operaciones Básicas en JavaScript.</title>
+     <style>
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+   <!-- <div id ="page"> -->
+		<!-- <div id ="content">-->
+             <div id="image-container">
+                  <img src="Evidencia.png" alt="JavaScript">
+                  
+			 <!-- </div>-->
+        </div>
+   <!-- </div>-->
+    <!-- NAV LATERAL -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#Parte1">Laboratorio Entregble # 3</a></li>
+      </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido-principal">
+    <!--Ejercicio 1: Validar Calificaciones-->
+    <section id="Parte1">
+        <h1 class="title">
+           Calculadora Basica
+        </h1>
+        <h2 class="h2">
+           Laboratorio Entregable Calculadora Basica
+         </h2>
+        <p class="parrafo">
+          - Paso 1. Declaración de Variables <br>
+          - Paso 2. Función para realizar operaciones <br>
+          - Paso 3. Realizar validaciones de datos y operaciones. <br> 
+          - Paso 4. Bucle para realizar múltiples operaciones. <br>
+          - Paso 5. Prueba de la calculadora. <br>
+          - Paso 6. Copia tu código en el repositorio y súbelo.</p>
+          
+        <div style="max-width: 300px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+            <form id="formularioCalculadora" action="" method="post">
+               <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+                <legend><b>Ejecuta la Calculadora</b></legend>
+                        
+                <!--<button onclick="location.reload();">Ejecutar Calculadora</button> -->
+                <button type="button" onclick="iniciarCalculadora()">Ejecutar Calculadora</button>
+ 
+               </fieldset>  
+         
+          </form>
+        </div>
+      
+        <script>
+        function iniciarCalculadora() {
+    // Paso 2: Función para realizar operaciones
+    function realizarOperacion(num1, num2, operacion) {
+        if (operacion === "suma") {
+            return num1 + num2;
+        } else if (operacion === "resta") {
+            return num1 - num2;
+        } else if (operacion === "multiplicacion") {
+            return num1 * num2;
+        } else if (operacion === "division") {
+            if (num2 === 0) {
+                return "Error: No se puede dividir entre cero";
+            }
+            return num1 / num2;
+        } else {
+            return "Error: Operación no válida";
+        }
+    }
+
+    let continuar = true;
+
+    while (continuar) {
+        // Pedimos datos y validamos si Cancelar
+        let num1 = prompt("Ingresa el primer número:");
+        if (num1 === null) {
+            window.location.href = "Evidencia4.html";
+            return;
+        }
+        num1 = parseFloat(num1);
+
+        let num2 = prompt("Ingresa el segundo número:");
+        if (num2 === null) {
+            window.location.href = "Evidencia4.html";
+            return;
+        }
+        num2 = parseFloat(num2);
+
+        let operacion = prompt("Ingresa la operación (suma, resta, multiplicacion, division) o 'salir' para terminar:");
+        if (operacion === null) {
+            window.location.href = "Evidencia4.html";
+            return;
+        }
+
+        if (operacion.toLowerCase() === "salir") {
+            alert("Gracias por usar la calculadora. ¡Hasta luego!");
+            continuar = false;
+            break;
+        }
+
+        let resultado = realizarOperacion(num1, num2, operacion.toLowerCase());
+        alert(`Resultado de la ${operacion}: ${resultado}`);
+    }
+}
+</script>
+    </section>
+    </main>
+  </body>
+</html>

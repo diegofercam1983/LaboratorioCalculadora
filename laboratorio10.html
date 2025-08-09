@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesLaboratorios.css">
+    <script src="changePage.js"></script>
+    <title>Laoratorio 10 - Introducción a la Sintaxis Básica, Tipos de Datos, Variables y Operadores en JavaScript</title>
+</head>
+<body>
+   <!-- <div id ="page"> -->
+		<!-- <div id ="content">-->
+             <div id="image-container">
+                  <img src="4.1 Sintaxis.png" alt="JavaScript">
+			 <!-- </div>-->
+        </div>
+   <!-- </div>-->
+    <!-- NAV LATERAL -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#Parte1">Parte Uno</a></li>
+      <li><a href="#Parte2">Parte Dos</a></li>
+      <li><a href="#Parte3">Parte Tres</a></li>
+       </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido-principal">
+    <!--Parte 1: Variables y Tipos de Datos-->
+    <section id="Parte1">
+        <h1 class="title">
+           Parte 1: Variables y Tipos de Datos
+        </h1>
+        <h2 class="h2">
+            Declaracion de Variables y Tipos de Datos
+        </h2>
+        <p class="parrafo">
+          - Declara tres variables:'nombre' (string), 'edad' (number) y 'esEstudiante' (booleano)
+        </p>
+        <p class="parrafo">
+          - Muestra los valores de estas variables en la consola.
+        </p>
+        <p class="parrafo">
+          - Cambia los valores de las variables y observa los resultados.
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+            <form id="formulario" action="" method="post">
+               <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+                <legend><b>Estudiante</b></legend>
+
+                <label>
+                    Nombre:
+                    <input type="text" id="nombreP1" required>
+                </label><br><br>
+
+                <label>
+                    Edad:
+                    <input type="number" id="edad" required>
+                </label><br><br>
+
+                <label>
+                    ¿Es estudiante?
+                    <input type="checkbox" id="esEstudiante">
+                </label><br><br>
+
+                <button class="botonE"  type="button" onclick="enviarFormularioP1()">Enviar</button>
+                <button class="botonR" type="button" onclick="limpiarFormularioP1()">Limpiar</button>
+                       
+              </fieldset>
+          </form>
+        </div>
+
+        <script>
+            function enviarFormularioP1() {
+            // Declaración de variables
+            let nombreP1 = document.getElementById("nombreP1").value;
+            let edad = Number(document.getElementById("edad").value);
+            let esEstudiante = document.getElementById("esEstudiante").checked;
+
+            // Mostrar en consola
+            console.log("Nombre:", nombreP1);
+            console.log("Edad:", edad);
+            console.log("¿Es estudiante?:", esEstudiante);
+            }
+      </script> 
+  </section>
+
+  <br><br><br>
+  <section id="Parte2">
+       <h1 class="title">
+          Parte 2: Operaciones Matemáticas y Comparación
+        </h1>
+        <h2 class="h2">
+           Operaciones Matemáticas y Comparación
+        </h2>
+    
+        <p class="parrafo">
+            - Declara dos variables numéricas, `a` y `b`.
+        </p>
+        <p class="parrafo">
+         - Realiza las operaciones de suma, resta, multiplicación y división entre `a` y `b`.
+        </p>
+        <p class="parrafo">
+         - Compara los valores de `a` y `b` utilizando los operadores = =, ! =, >, <, > =, < = 
+           y muestra los resultados en la consola.
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+          <form id="formularioP2" action="" method="post">
+            <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+              <legend><b>Operaciones Matematicas</b></legend>
+
+            <label>
+                Ingrese el primer numero:
+                <input type="number" id="a" required>
+            </label><br><br>
+
+            <label>
+                 Ingrese el segundo numero:
+                <input type="number" id="b" required>
+            </label><br><br>
+
+             <button class="botonE" type="button" onclick="procesarDatosP2()">Enviar</button>
+             <button class="botonR" type="button" onclick="limpiarFormularioP2()">Limpiar</button>
+                       
+              </fieldset>
+          </form>
+        </div>
+
+        <script>
+      
+            function procesarDatosP2() {
+            // Capturar datos
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+
+
+            // Operaciones
+            console.log("Suma:", a + b);
+            console.log("Resta:", a - b);
+            console.log("Multiplicación:", a * b);
+            console.log("División:", b !== 0 ? a / b : "No se puede dividir entre 0");
+
+            console.log("a == b:", a == b);
+            console.log("a != b:", a != b);
+            console.log("a > b:", a > b);
+            console.log("a < b:", a < b);
+            console.log("a >= b:", a >= b);
+            console.log("a <= b:", a <= b);
+        }
+
+      </script> 
+    </section>
+
+    <br><br><br>
+  <section id="Parte3">
+       <h1 class="title">
+          Parte 3: Operadores Lógicos y Concatenación
+        </h1>
+        <h2 class="h2">
+           Uso de Operadores Lógicos y Concatenación de Strings
+        </h2>
+    
+        <p class="parrafo">
+            - Declara dos variables booleanas: `esMayorDeEdad` y `tieneLicencia`.
+        </p>
+        <p class="parrafo">
+         - Usa operadores lógicos (`&&`, `||`) para determinar si una persona puede conducir.
+        </p>
+        <p class="parrafo">
+         - Crea un mensaje de bienvenida utilizando concatenación de strings y template literals.
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+          <form id="formularioComparaciones" action="" method="post">
+            <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+              <legend><b>Comparaciones Logicas</b></legend>
+
+            <label>
+               Nombre:
+              <input type="text" id="nombreP2" required>
+            </label><br><br>
+
+            <label>
+                 ¿Es mayor de edad?
+                <input type="checkbox" id="esMayorDeEdad">
+            </label><br><br>
+            <label>
+            ¿Tiene licencia?
+            <input type="checkbox" id="tieneLicencia">
+            </label><br><br>
+             <button class="botonE" type="button" onclick="procesarDatosP3()">Enviar</button>
+             <button class="botonR" type="button" onclick="limpiarFormularioP3()">Limpiar</button>
+                       
+              </fieldset>
+          </form>
+        </div>
+
+    <script>
+        function procesarDatosP3() {
+        // Captura de valores
+        let nombreP2 = document.getElementById("nombreP2").value;
+        let esMayorDeEdad = document.getElementById("esMayorDeEdad").checked;
+        let tieneLicencia = document.getElementById("tieneLicencia").checked;
+
+        // Uso de operadores lógicos
+        let puedeConducir = esMayorDeEdad && tieneLicencia;
+        let mensajeConduccion = puedeConducir 
+            ? "Puede conducir legalmente." 
+            : "No puede conducir.";
+
+        // Concatenación con +
+        let mensaje1 = "Hola " + nombreP2 + ", " + mensajeConduccion;
+
+        // Concatenación con template literals
+        let mensaje2 = `Bienvenido/a ${nombreP2}. Estado: ${mensajeConduccion}`;
+
+      // Mostrar resultados en consola
+        console.log("---- RESULTADOS ----");
+        console.log("Nombre:", nombreP2);
+        console.log("¿Es mayor de edad?:", esMayorDeEdad);
+        console.log("¿Tiene licencia?:", tieneLicencia);
+        console.log("Puede conducir (AND &&):", puedeConducir);
+        console.log("Mensaje concatenación (+):", mensaje1);
+        console.log("Mensaje template literals:", mensaje2);
+
+        // También mostrar en pantalla (opcional)
+        alert(mensaje2);
+        }
+
+        </script>
+  </section>
+</main>
+</body>
+</html>

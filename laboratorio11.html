@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesLaboratorios.css">
+    <script src="changePage.js"></script>
+    <title>Laboratorio 11 - Condicionales en JavaScript</title>
+</head>
+<body>
+   <!-- <div id ="page"> -->
+		<!-- <div id ="content">-->
+             <div id="image-container">
+                  <img src="4.1.1 Condicionales.png" alt="JavaScript">
+                  
+			 <!-- </div>-->
+        </div>
+   <!-- </div>-->
+    <!-- NAV LATERAL -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#Ejercicio1">Ejercicio 1</a></li>
+      <li><a href="#Ejercicio2">Ejercicio 2</a></li>
+      <li><a href="#Ejercicio3">Ejercicio 3</a></li>
+      <li><a href="#Ejercicio4">Ejercicio 4</a></li>
+       </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido-principal">
+    <!--Ejercicio 1: Validar Calificaciones-->
+    <section id="Ejercicio1">
+        <h1 class="title">
+           Ejercicio 1: Verificacion Calificaciones
+        </h1>
+        <h2 class="h2">
+            Verificacion Calificaciones
+        </h2>
+        <p class="parrafo">
+          - Escribe un programa que solicite al usuario ingresar una calificación numérica entre 0 y 100.
+        </p>
+        <p class="parrafo">
+          - Si la calificación es mayor o igual a 90, muestra el mensaje "Aprobado con honores".
+        </p>
+        <p class="parrafo">
+          - Si la calificación es mayor o igual a 70 pero menor a 90, muestra el mensaje "Aprobado".
+        </p>
+         <p class="parrafo">
+          - Si la calificación es menor a 70, muestra el mensaje "Reprobado".
+
+        
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+            <form id="formularioC" action="" method="post">
+               <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+                <legend><b>Estudiante</b></legend>
+
+                <label>
+                    Ingresa una calificación (0 - 100):
+                    <input type="number" id="calificacion" min="0" max="100" required>
+                </label>
+                <br><br>
+                <button class="botonE" type="button" onclick="evaluarCalificacion()">Enviar</button>
+                <button class="botonR" type="button" onclick="limpiarFormularioCalificacion()">Limpiar</button>
+                <br>
+
+              </fieldset>
+              <div id="resultado"></div>
+          </form>
+        </div>
+
+         
+
+        <script>
+            function evaluarCalificacion() {
+            let calificacion = Number(document.getElementById("calificacion").value);
+            let mensaje = "";
+
+            if (calificacion >= 90) {
+                mensaje = "Aprobado con honores";
+            } else if (calificacion >= 70) {
+                mensaje = "Aprobado";
+            } else {
+                mensaje = "Reprobado";
+            }
+
+            console.log("Calificación:", calificacion);
+            console.log("Resultado:", mensaje);
+
+            // Mostrar en pantalla
+            document.getElementById("resultado").textContent = mensaje;
+            }
+
+            function limpiarFormularioCalificacion() {
+            document.getElementById("calificacion").value = "";
+            document.getElementById("resultado").textContent = "";
+            console.clear();
+            document.getElementById("calificacion").focus();
+     }
+        </script> 
+    </section>
+
+  <br><br><br>
+  <section id="Ejercicio2">
+       <h1 class="title">
+          Ejercicio 2: Determinación de Número Par o Impar
+        </h1>
+        <h2 class="h2">
+           Determinación de Número Par o Impar
+        </h2>
+    
+        <p class="parrafo">
+            - Escribe un programa que solicite al usuario ingresar un número.
+        </p>
+        <p class="parrafo">
+         - Si el número es divisible por 2, muestra "El número es par".
+        </p>
+        <p class="parrafo">
+         - De lo contrario, muestra "El número es impar".
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+          <form id="formularioE2" action="" method="post">
+            <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+              <legend><b>Numeros Pares e impares</b></legend>
+
+              <label>
+                Ingresa un número:
+                     <input type="number" id="numero" required>
+                </label>
+                <br><br>
+                    <button class="botonE" type="button" onclick="verificarNumero()">Enviar</button>
+                    <button class="botonR" type="button" onclick="limpiarFormularioPar()">Limpiar</button>           
+                    </fieldset>
+                    <div id="resultadoPar"></div>
+            </form>
+        </div>
+
+          <script>
+            function verificarNumero() {
+            let numero = Number(document.getElementById("numero").value);
+            let mensaje = "";
+
+            if (numero % 2 === 0) {
+                mensaje = "El número es par";
+            } else {
+                mensaje = "El número es impar";
+            }
+
+            console.log("Número ingresado:", numero);
+            console.log("Resultado:", mensaje);
+
+            document.getElementById("resultadoPar").textContent = mensaje;
+            }
+
+            function limpiarFormularioPar() {
+            document.getElementById("numero").value = "";
+            document.getElementById("resultadoPar").textContent = "";
+            console.clear();
+            document.getElementById("numero").focus();
+            }
+        </script> 
+    </section>
+
+    <br><br><br>
+  <section id="Ejercicio3">
+       <h1 class="title">
+          Ejercicio 3: Evaluación de Descuentos
+        </h1>
+        <h2 class="h2">
+           Evaluación de Descuentos
+        </h2>
+    
+        <p class="parrafo">
+            - Crea un programa que solicite al usuario ingresar el monto total de su compra.
+        </p>
+        <p class="parrafo">
+         - Si el monto es mayor a 100, aplica un descuento del 10%.
+        </p>
+        <p class="parrafo">
+         - Si el monto es menor o igual a 100, no aplica descuento.
+        </p>
+          <p class="parrafo">
+         - Muestra el monto final a pagar después de aplicar el descuento si corresponde.
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+          <form id="formularioComparaciones" action="" method="post">
+            <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+              <legend><b>Aplicar Descuentos</b></legend>
+
+            <label>
+                Monto total de la compra:
+                <input type="number" id="monto" min="0" step="0.01" required>
+            </label>
+            <br><br>
+            <button class="botonE" type="button" onclick="calcularPago()">Enviar</button>
+            <button class="botonR" type="button" onclick="limpiarFormularioDescuento()">Limpiar</button>           
+                    </fieldset>
+                    <div id="resultadoDescuento"></div>
+                </form>
+                </div>
+
+    <script>
+        function calcularPago() {
+            let monto = Number(document.getElementById("monto").value);
+            let montoFinal = monto;
+            let mensaje = "";
+
+      if (monto > 100) {
+        montoFinal = monto - (monto * 0.10);
+        mensaje = `Se aplicó un descuento del 10%. Monto final: $${montoFinal.toFixed(2)}`;
+      } else {
+        mensaje = `No se aplicó descuento. Monto final: $${montoFinal.toFixed(2)}`;
+      }
+
+      console.log("Monto ingresado:", monto);
+      console.log("Monto final a pagar:", montoFinal);
+
+      document.getElementById("resultadoDescuento").textContent = mensaje;
+    }
+
+    function limpiarFormularioDescuento() {
+      document.getElementById("monto").value = "";
+      document.getElementById("resultadoDescuento").textContent = "";
+      console.clear();
+      document.getElementById("monto").focus();
+    }
+        </script>
+  </section>
+
+    <br><br><br>
+  <section id="Ejercicio4">
+       <h1 class="title">
+          Ejercicio 4: Juego de Adivinanza de Números
+        </h1>
+        <h2 class="h2">
+           Juego de Adivinanza de Números
+        </h2>
+    
+        <p class="parrafo">
+            - El programa debe generar un número aleatorio entre 1 y 10.
+        </p>
+        <p class="parrafo">
+         - Solicita al usuario que adivine el número.
+        </p>
+        <p class="parrafo">
+         - Si el usuario adivina correctamente, muestra "¡Felicidades, adivinaste el número!".
+        </p>
+          <p class="parrafo">
+         - Si no adivina, muestra "Lo siento, el número era X", donde X es el número generado.
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+          <form id="formularioAdivinanzas" action="" method="post">
+            <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+              <legend><b>Aplicar Descuentos</b></legend>
+
+                <label>
+                    Ingresa un número del 1 al 10:
+                    <input type="number" id="numeroAdivina" min="1" max="10" required>
+                </label>
+                <br><br>
+                <button class="botonE" type="button" onclick="jugar()">Adivinar</button>
+                <button class="botonR" type="button" onclick="limpiarFormularioAdivinaza()">Limpiar</button>
+                </fieldset>
+                </form> 
+            <div id="resultadoAdivina"></div>
+        </div>
+
+        <script>
+      // Generar número aleatorio entre 1 y 10
+            let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+
+            function jugar() {
+            let numeroUsuario = Number(document.getElementById("numero").value);
+            let mensaje = "";
+
+            if (numeroUsuario === numeroSecreto) {
+                mensaje = "¡Felicidades, adivinaste el número!";
+            } else {
+                mensaje = `Lo siento, el número era ${numeroSecreto}`;
+            }
+
+            console.log("Número secreto:", numeroSecreto);
+            console.log("Número del usuario:", numeroUsuario);
+
+            document.getElementById("resultadoAdivina").textContent = mensaje;
+
+            // Generar un nuevo número para la siguiente ronda
+            numeroSecreto = Math.floor(Math.random() * 10) + 1;
+            }
+
+            function limpiarFormularioAdivinaza() {
+            document.getElementById("numeroAdivina").value = "";
+            document.getElementById("resultadoAdivina").textContent = "";
+            console.clear();
+            document.getElementById("numeroAdivina").focus();
+            }
+ 
+    </script>
+  </section>
+</main>
+</body>
+</html>

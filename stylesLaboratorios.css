@@ -1,0 +1,139 @@
+/* NAV LATERAL FIJO */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;          /* ancho del menú */
+  height: 100vh;         /* alto 100% de la pantalla */
+  /*background-color: #003049;*/
+ background: linear-gradient(100deg, #7ac0e6, #305992); /*Background de la barra de navegacion izquierda*/
+  padding-top: 70px; /* Permite ajustar el pading superior del sidebar*/
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 50px; /*Centra las opciones del Sidebar*/
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #f77f00;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido-principal {
+  margin-left: 200px;   /* mismo ancho del sidebar */
+  padding: 60px; /* Pading del contenido principal*/
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.parrafo {
+              text-align: justify;
+              line-height: 1.5;
+              margin: 20px 0;
+              width: 95%;
+              margin-left: 30px;
+            }
+
+
+.title {
+              color: #2c3e50;
+              text-align: center;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              margin-top: 0;
+              padding-top: 0;
+            }
+
+.h2 {
+              color: #2c3e50;
+              text-align: left;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              margin-left: 30px;
+            }
+
+#image-container{
+    display:block;
+    justify-content: center;
+    width: 10%;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-bottom: 0;      
+    padding-bottom: 0;    
+     height: auto;
+    }
+
+
+#image-container-Lab11{
+    display:block;
+    justify-content: center;
+    width: 5%;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-bottom: 0;      
+    padding-bottom: 0;    
+     height: 5%;
+    }
+  
+  .botonE {
+
+     padding: 5px 10px; 
+                margin: 5px; 
+                font-size: 16px; 
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                align-items: center;
+  }
+
+  .botonR {
+
+    padding: 5px 10px; margin: 5px;
+                font-size: 16px; 
+                border-radius: 5px;
+                border: 1px solid #4CAF50; 
+                background-color: #4CAF50;
+                color: white;
+                cursor: pointer;
+                align-items: center;
+  }
+
+  #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+      #resultadoPar {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    
+      #resultadoDescuento {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    
+        #resultadoAdivina {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    #formularioCalculadora fieldset {
+    display: flex;
+    justify-content: center;
+}
+  

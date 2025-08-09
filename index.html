@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Practica HTML y JavaScript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesIndex.css">
+        <script src="changePage.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar-horizontal">
+            <h1 class="nav-title">Laboratorios HTML - JavaScript - CSS </h1>
+                  <ul class="nav-list">
+                  <li><a href="#" onclick="changePage('laboratorio10.html')">Laboratorio Numero 10</a></li>
+                  <li><a href="#" onclick="changePage('laboratorio11.html')">Laboratorio Numero 11</a></li>
+                  <li><a href="#" onclick="changePage('laboratorio12.html')">Laboratorio Numero 12</a></li>
+                  <li><a href="#" onclick="changePage('laboratorio13.html')">Laboratorio Numero 13</a></li>
+                  <li><a href="#" onclick="changePage('Evidencia4.html')">Laboratorio Entregable #3</a></li>
+                </ul>
+            </nav>     
+        </header>
+      
+      <!-- Clase Contenedor Main-->
+  <main>  
+              
+    <section id="contenido-embebido"> 
+      <h2>Laboratorios de Practica JavaScript y CSS</h2><br>
+      <iframe src="landingpage.html" id="main-frame" 
+              width="100%" 
+              height="600px" 
+              style="border: 2px solid #ccc; border-radius: 8px;">
+      </iframe>
+     </section>
+   </main>  
+ 
+     <div class="contenedor-footer">    
+      <footer>
+        <p style="text-align: center; font-size: 0.8em; color: #666;">
+          &copy; 2024 Diego Fernando Camacho Calderón. Todos los derechos reservados.
+          <br>
+          Esta hoja de vida es un documento personal y no debe ser distribuida sin autorización.
+          <br>Palmira, Valle del Cauca, Colombia.
+        </p>
+      </footer>
+    </div>
+    </body>
+</html>

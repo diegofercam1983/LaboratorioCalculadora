@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesLaboratorios.css">
+    <script src="changePage.js"></script>
+    <title>Laboratorio 12 - Explorando Bucles en JavaScript</title>
+</head>
+<body>
+   <!-- <div id ="page"> -->
+		<!-- <div id ="content">-->
+             <div id="image-container">
+                  <img src="4.1.2 Bucles.png" alt="JavaScript">
+                  
+			 <!-- </div>-->
+        </div>
+   <!-- </div>-->
+    <!-- NAV LATERAL -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#Parte1">Parte 1 - Bucle For</a></li>
+      <li><a href="#Parte2">Parte 2 - Bucle While</a></li>
+      <li><a href="#Parte3">Parte 3 - Do While</a></li>
+      
+       </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido-principal">
+    <!--Ejercicio 1: Validar Calificaciones-->
+    <section id="Parte1">
+        <h1 class="title">
+           Ejercicio 1: Bucle For
+        </h1>
+        <h2 class="h2">
+           Practica Bucle For
+        </h2>
+        <p class="parrafo">
+          - Escribe un código que recorra un arreglo de números y calcule la suma total.
+        </p>
+        <p class="parrafo">
+          - ¿Cómo se modifica el código para calcular el promedio de los números?
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+            <form id="formularioC" action="" method="post">
+               <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+                <legend><b>Suma de Un Arreglo</b></legend>
+
+               <label>
+                Ingresa números separados por comas:
+                <textarea id="numeros" rows="3" cols="30"></textarea>
+              </label>
+              <br><br>
+              <button class="botonE" type="button" onclick="calcularSuma()">Calcular Suma</button>
+               <button class="botonR" type="button" onclick="limpiarFormularioSuma()">Limpiar</button>
+
+               </fieldset>
+              <div id="resultado"></div>
+          </form>
+        </div>
+
+        <script>
+            function calcularSuma() {
+            // Convertir texto a arreglo de números
+            let arreglo = document.getElementById("numeros").value.split(",").map(Number);
+            let suma = 0;
+           
+
+              // Recorrer el arreglo con un for
+              for (let i = 0; i < arreglo.length; i++) {
+                suma += arreglo[i];
+              }
+            let promedio = suma / arreglo.length;
+
+
+            console.log("Arreglo:", arreglo);
+            console.log("Suma total:", suma);
+            console.log("Promedio:", promedio);
+
+          document.getElementById("resultado").textContent = `La suma total es: ${suma} y el promedio es: ${promedio}`;
+         
+           }
+
+           
+            function limpiarFormularioSuma() {
+            document.getElementById("numeros").value = "";
+             document.getElementById("resultado").textContent = ""; // Borra el resultado
+            console.clear();
+            document.getElementById("numeros").focus();
+          
+            }
+
+        </script> 
+    </section>
+
+  <br><br><br>
+  <section id="Ejercicio2">
+       <h1 class="title">
+          Ejercicio 2: Bucle While
+        </h1>
+        <h2 class="h2">
+           Practicac Bucle While
+        </h2>
+    
+        <p class="parrafo">
+            - Escribe un programa que solicite al usuario ingresar un número.
+        </p>
+        <p class="parrafo">
+            - Pregunta: ¿Qué sucede si se inicializa el contador con un valor negativo?
+        </p>
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+          <form id="formularioBuclwWhile" action="" method="post" onsubmit="return false;">
+            <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+              <legend><b>Arreglo </b></legend>
+
+                <label>
+                  Ingresa un número:
+                  <input type="number" id="numeroInput">
+                </label>
+                <br><br>
+
+                <button class="botonE" type="button" onclick="agregarNumero()">Ingresar</button>
+                <button class="botonR" type="button" onclick="limpiarWhile()">Limpiar</button>
+                 </fieldset>
+                <div id="resultadoWhile"></div>
+              </form>
+                </div>
+
+          <script>
+    let numero = 0; // Variable para el número
+    let historial = []; // Guardar números ingresados
+
+    function agregarNumero() {
+      numero = parseInt(document.getElementById("numeroInput").value);
+
+      while (numero >= 0) {
+        historial.push(numero);
+        document.getElementById("resultadoWhile").textContent =
+          "Números ingresados: " + historial.join(", ");
+        document.getElementById("numeroInput").value = "";
+        return; // Salimos para esperar la siguiente entrada
+      }
+
+      // Si el número es negativo, mostramos mensaje y deshabilitamos input
+      document.getElementById("resultadoWhile").textContent =
+        "Has ingresado un número negativo. Fin del programa.";
+      document.getElementById("numeroInput").disabled = true;
+    }
+
+    function limpiarWhile() {
+      historial = [];
+      document.getElementById("numeroInput").value = "";
+      document.getElementById("numeroInput").disabled = false;
+      document.getElementById("resultadoWhile").textContent = "";
+    }
+  </script>
+</section>
+ <br><br><br>
+  
+ <section id="Parte3">
+       <h1 class="title">
+          Parte 3: Bucle Do - Wile
+        </h1>
+        <h2 class="h2">
+           Practica Do-While
+        </h2>
+    
+        <p class="parrafo">
+           - Implementa un programa que pida al usuario que ingrese una contraseña hasta que sea correcta.
+        </p>
+        <p class="parrafo">
+         - Pregunta: ¿Por qué se usa un bucle `do...while` en este caso en lugar de `while`?
+        </p>
+        
+               
+        <div style="max-width: 500px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+          <form id="formPassword" action="" method="post" onsubmit="return false;">
+            <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+              <legend><b>Validación de Contraseña</b></legend>
+
+                <label>
+                Ingresa la contraseña:
+                <input type="password" id="passwordInput">
+              </label>
+              <br><br>
+
+              <button class="botonE" type="button" onclick="verificarPassword()">Ingresar</button>
+              <button class="botonR" type="button" onclick="limpiarPassword()">Limpiar</button>
+            </fieldset>
+              <div id="resultadoPassword"></div>    
+            </form>
+          </div>
+
+    <script>
+        const contrasenaCorrecta = "1234";
+    let contrasenaIngresada = "";
+
+    function verificarPassword() {
+      do {
+        contrasenaIngresada = document.getElementById("passwordInput").value;
+        if (contrasenaIngresada !== contrasenaCorrecta) {
+          document.getElementById("resultadoPassword").textContent =
+            "Contraseña incorrecta. Intenta de nuevo.";
+          return; // Salimos para que el usuario vuelva a escribir
+        }
+      } while (contrasenaIngresada !== contrasenaCorrecta);
+
+      // Si es correcta
+      document.getElementById("resultadoPassword").textContent =
+        "¡Contraseña correcta! Bienvenido.";
+    }
+
+    function limpiarPassword() {
+      document.getElementById("passwordInput").value = "";
+      document.getElementById("resultadoPassword").textContent = "";
+    }
+        </script>
+  </section>
+
+  
+</main>
+</body>
+</html>

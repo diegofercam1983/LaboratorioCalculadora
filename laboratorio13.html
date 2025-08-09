@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesLaboratorios.css">
+    <script src="changePage.js"></script>
+    <title>Laboratorio 13 - Declaración de funciones</title>
+     <style>
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+   <!-- <div id ="page"> -->
+		<!-- <div id ="content">-->
+             <div id="image-container">
+                  <img src="4.1.3 DeclaracionFunciones.png" alt="JavaScript">
+                  
+			 <!-- </div>-->
+        </div>
+   <!-- </div>-->
+    <!-- NAV LATERAL -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#Parte1">Calculadora Basica</a></li>
+      </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido-principal">
+    <!--Ejercicio 1: Validar Calificaciones-->
+    <section id="Parte1">
+        <h1 class="title">
+           Calculadora Basica
+        </h1>
+        <h2 class="h2">
+           Funciones Matemáticas
+         </h2>
+        <p class="parrafo">
+          - Implementar funciones en JavaScript para suma, resta, multiplicación y división.  </p><p class="parrafo">
+          - Crear una función principal llamada <code>calculadora</code> que reciba dos números y una operación como parámetros. </p><p class="parrafo"> 
+          - Probar y depurar usando <code>prompt</code> y <code>console.log</code>.
+        </p>
+        
+        
+        <div style="max-width: 300px; margin: 0 auto; padding: 20px; text-align: left; background-color: rgb(208, 216, 224);" >
+            <form id="formularioCalculadora" action="" method="post">
+               <fieldset style="border: 1px solid #aaa6be; padding: 20px; background-color: #f9f9f9;">
+                <legend><b>Ejecuta la Calculadora</b></legend>
+                        
+                <button onclick="location.reload();">Ejecutar Calculadora</button>
+        
+               </fieldset>  
+         
+          </form>
+        </div>
+      
+        <script>
+             // Funciones matemáticas básicas
+              function suma(a, b) {
+                return a + b;
+              }
+
+              function resta(a, b) {
+                return a - b;
+              }
+
+              function multiplicacion(a, b) {
+                return a * b;
+              }
+
+              //validamos la division por 0
+              function division(a, b) {
+                if (b === 0) {
+                  return "Error: No se puede dividir entre cero";
+                }
+                return a / b;
+              }
+
+              // Función principal
+              function calculadora(num1, num2, operacion) {
+                switch (operacion.toLowerCase()) {
+                  case "suma":
+                    return suma(num1, num2);
+                  case "resta":
+                    return resta(num1, num2);
+                  case "multiplicacion":
+                  case "multiplicación":
+                    return multiplicacion(num1, num2);
+                  case "division":
+                  case "división":
+                    return division(num1, num2);
+                  default:
+                    return "Operación no válida";
+                }
+              }
+
+              // Probar y depurar
+              let numero1 = parseFloat(prompt("Ingresa el primer número:"));
+              let numero2 = parseFloat(prompt("Ingresa el segundo número:"));
+              let operacion = prompt("Ingresa la operación (suma, resta, multiplicacion, division):");
+
+              let resultado = calculadora(numero1, numero2, operacion);
+              console.log(`Resultado de ${operacion}:`, resultado);
+              alert(`El resultado de la ${operacion} es: ${resultado}`);
+
+        </script> 
+    </section>
+    </main>
+  </body>
+</html>
